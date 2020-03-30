@@ -6,13 +6,11 @@ function findMatching(drivers, name){
 }
 
 function fuzzyMatch(drivers, letters) {
-  let reg = new RegExp(`^${letters}\w+`, `ig`);
+  let reg = new RegExp(`${letters}|\\w+`, `ig`);
   return drivers.filter(function (driver) {
-    if (driver.match(reg).toString()){
-      return driver;
-    }
-  });
+    return driver !== driver.match(reg).toString()});
 }
+
 
 function matchName (list, name) {
   return list.filter(function (driver) {
