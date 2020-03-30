@@ -11,7 +11,6 @@ function fuzzyMatch(drivers, letters) {
     return driver !== driver.match(reg).toString()});
 }
 
-
 function matchName (list, name) {
   return list.filter(function (driver) {
     return driver.name.toLowerCase() === name.toLowerCase();
