@@ -8,7 +8,7 @@ function findMatching(drivers, name){
 function fuzzyMatch(drivers, letters) {
   let reg = new RegExp(`^${letters}\w+`, `ig`);
   return drivers.filter(function (driver) {
-    return driver === driver.match(reg).toString()});
+    driver.match(reg).toString() ? return driver: });
 }
 
 function matchName (list, name) {
